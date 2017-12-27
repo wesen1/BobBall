@@ -3,20 +3,19 @@ package org.bobstuff.bobball.Menus;
 import android.app.Activity;
 import android.os.Bundle;
 import android.view.View;
-import android.view.Window;
-import android.view.WindowManager;
 import android.widget.TextView;
 
 import org.bobstuff.bobball.R;
 import org.bobstuff.bobball.Statistics;
+import org.bobstuff.bobball.Utilities;
 
 public class menuStatistics extends Activity {
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        requestWindowFeature(Window.FEATURE_NO_TITLE);
-        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
+
+        Utilities.hideTitleBar(this);
         setContentView(R.layout.menu_statistics);
 
         String gamesPlayedText = getString(R.string.gamesPlayedText, Statistics.getPlayedGames());
