@@ -50,9 +50,9 @@
         android:layout_height="match_parent"
         android:layout_centerHorizontal="true"
         android:layout_below="@+id/playerSelect"
-        android:layout_above="@+id/backToMainButton">
+        android:layout_above="@+id/buttons">
 
-        <LinearLayout
+        <TableLayout
             android:id="@+id/highScores"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -72,22 +72,39 @@
         android:layout_below="@+id/playerSelect"
         android:visibility="gone" />
 
-    <Button
-        android:id="@+id/backToMainButton"
+    <LinearLayout
+        android:id="@+id/buttons"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/menuBackButton"
-        android:layout_alignParentBottom="true"
-        android:visibility="invisible"
-        android:onClick="goBack" />
+        android:layout_alignParentBottom="true">
 
-    <Button
-        android:id="@+id/retryButton"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="@string/retry"
-        android:layout_alignParentBottom="true"
-        android:visibility="gone"
-        android:onClick="retry" />
+
+        <Button
+            android:id="@+id/shareHighScore"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="Share your Highscore"
+            android:onClick="shareHighScore" />
+
+        <Button
+            android:id="@+id/backToMainButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/menuBackButton"
+            android:visibility="invisible"
+            android:onClick="goBack" />
+
+        <Button
+            android:id="@+id/retryButton"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:text="@string/retry"
+            android:visibility="gone"
+            android:onClick="retry" />
+
+    </LinearLayout>
 
 </RelativeLayout>
